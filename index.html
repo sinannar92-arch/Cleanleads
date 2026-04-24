@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="CleanLeads – Automatisierte B2B-Neukundengewinnung für Reinigungsunternehmen. Planbare Anfragen statt Hoffnungsmarketing.">
+<title>CleanLeads – Planbare Neukundengewinnung für Reinigungsunternehmen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#1B3A5C;--accent:#2E7DC4;--surface:#FFFFFF;--text:#1A1A2E;--muted:#6B7A8D;--white:#FFFFFF;--dark:#0F1923}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;color:var(--text);font-size:1.1rem;line-height:1.75}
+h1,h2,h3{font-family:"Playfair Display",serif}
+h1{font-size:3.4rem;font-weight:700;line-height:1.12}
+h2{font-size:2.3rem;font-weight:600;margin-bottom:1.5rem}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+section{padding:100px 0}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:all .4s}
+.nav.scrolled{background:rgba(15,25,35,.95);backdrop-filter:blur(12px);padding:12px 0;box-shadow:0 4px 30px rgba(0,0,0,.2)}
+.nav .container{display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:"Playfair Display",serif;font-size:1.5rem;font-weight:700;color:#fff}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:.92rem;color:#fff;font-weight:500;transition:color .3s;letter-spacing:.3px}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--accent);color:#fff!important;padding:10px 22px;border-radius:8px;font-weight:600;transition:transform .2s,box-shadow .2s}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(46,125,196,.4)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none}
+.hamburger span{width:24px;height:2px;background:#fff;transition:.3s}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:var(--dark)}
+.hero-bg{position:absolute;inset:0;background:url('img/hero-bg.png') center/cover no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,25,35,.88) 0%,rgba(27,58,92,.72) 50%,rgba(15,25,35,.85) 100%)}
+.hero-content{position:relative;z-index:2;max-width:760px;padding-top:80px}
+.badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:.78rem;font-weight:600;padding:8px 20px;border-radius:50px;margin-bottom:28px;border:1px solid rgba(255,255,255,.3);letter-spacing:1.8px;text-transform:uppercase;backdrop-filter:blur(4px)}
+.hero h1{color:#fff;margin-bottom:28px}
+.hero p{font-size:1.2rem;color:#fff;margin-bottom:44px;max-width:620px;line-height:1.75}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px}
+.btn-primary{background:var(--accent);color:#fff;padding:16px 34px;border-radius:10px;font-weight:700;font-size:1.05rem;transition:all .3s;border:none;cursor:pointer;display:inline-block;text-align:center}
+.btn-primary:hover{background:#2569a8;transform:translateY(-2px);box-shadow:0 8px 30px rgba(46,125,196,.35)}
+.btn-outline{background:transparent;color:#fff;padding:16px 34px;border-radius:10px;font-weight:600;font-size:1.05rem;border:2px solid rgba(255,255,255,.25);cursor:pointer;transition:all .3s;backdrop-filter:blur(4px)}
+.btn-outline:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.5)}
+.trust-bar{display:flex;gap:36px;flex-wrap:wrap;font-size:.85rem;color:#fff;font-weight:500;text-transform:uppercase;letter-spacing:.8px}
+.trust-bar span{display:flex;align-items:center;gap:10px}
+.trust-bar span::before{content:"";display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%}
+
+/* (visual break styles removed – sachliches Design) */
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:48px}
+.card{background:var(--white);padding:40px 36px;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;border-top:3px solid transparent}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(0,0,0,.1);border-top-color:var(--accent)}
+.card-num{font-family:"Playfair Display",serif;font-size:3rem;font-weight:700;color:rgba(46,125,196,.12);line-height:1;margin-bottom:16px}
+.card h3{font-size:1.2rem;margin-bottom:14px;color:var(--primary)}
+
+/* SOLUTION */
+.solution-intro{font-size:1.15rem;color:var(--muted);max-width:800px;margin-bottom:48px}
+.feature{display:flex;gap:24px;margin-bottom:32px;align-items:flex-start}
+.feature-line{min-width:3px;background:linear-gradient(180deg,var(--accent),transparent);border-radius:2px;align-self:stretch}
+.feature h3{color:var(--primary);margin-bottom:8px;font-size:1.1rem}
+.feature p{font-size:1rem}
+
+/* PROCESS */
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:48px;position:relative}
+.timeline::before{content:"";position:absolute;top:28px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,var(--accent),var(--primary));border-radius:2px}
+.step{text-align:center;position:relative}
+.step-num{width:56px;height:56px;background:var(--white);border:2px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;color:var(--accent);margin:0 auto 20px;position:relative;z-index:2;font-family:"Playfair Display",serif}
+.step h3{font-size:.95rem;color:var(--primary);margin-bottom:8px}
+.step p{font-size:.88rem;color:var(--muted);line-height:1.6}
+
+/* BENEFITS - Dark section */
+.benefits{position:relative;color:var(--white);overflow:hidden;background:linear-gradient(135deg,var(--dark) 0%,var(--primary) 100%)}
+.benefits .container{position:relative;z-index:2}
+.benefits h2{color:var(--white)}
+.benefits-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:48px}
+.benefit-card{background:rgba(255,255,255,.06);backdrop-filter:blur(8px);padding:40px 36px;border-radius:16px;border:1px solid rgba(255,255,255,.08);transition:all .3s;position:relative;overflow:hidden}
+.benefit-card::before{content:"";position:absolute;top:0;left:0;width:3px;height:100%;background:var(--accent);opacity:0;transition:opacity .3s}
+.benefit-card:hover{background:rgba(255,255,255,.1);transform:translateY(-4px)}
+.benefit-card:hover::before{opacity:1}
+.benefit-card h3{color:var(--white);margin-bottom:12px;font-size:1.15rem}
+.benefit-card p{color:rgba(255,255,255,.7);font-size:1rem}
+
+/* LEGAL */
+.legal-note{border-left:3px solid var(--accent);padding:36px 40px;background:var(--surface);border-radius:0 12px 12px 0;max-width:900px}
+.legal-note h3{color:var(--primary);margin-bottom:16px;font-size:1.1rem}
+.legal-note p{color:var(--muted);margin-bottom:12px;font-size:1rem}
+
+/* EMAILS */
+.email-section{position:relative;overflow:hidden}
+.email-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:28px;margin-top:40px}
+.email-card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.email-header{background:var(--primary);color:#fff;padding:16px 24px;font-size:.9rem;display:flex;flex-direction:column;gap:4px}
+.email-body{padding:28px 24px;font-size:.95rem;line-height:1.8;color:var(--text)}
+
+/* INVESTMENT */
+.invest-section{position:relative;overflow:hidden;background:#EDF1F7}
+.invest-content{max-width:750px;margin:0 auto;text-align:center;position:relative;z-index:2}
+.invest-content>p{color:var(--muted);font-size:1.1rem;line-height:1.8;margin-bottom:20px}
+.invest-statement{font-family:"Playfair Display",serif;font-size:1.55rem;color:var(--primary);font-weight:600;margin:44px 0;line-height:1.4}
+.invest-divider{width:48px;height:2px;background:var(--accent);margin:36px auto;border-radius:2px}
+.invest-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin:52px 0 48px;text-align:center}
+.invest-pillar{padding:32px 20px}
+.invest-pillar .pillar-num{font-family:"Playfair Display",serif;font-size:2.4rem;font-weight:700;color:rgba(46,125,196,.15);margin-bottom:16px;line-height:1}
+.invest-pillar h3{font-size:1.05rem;color:var(--primary);margin-bottom:10px}
+.invest-pillar p{font-size:.95rem;color:var(--muted);line-height:1.6}
+
+/* CONTACT */
+.contact-section{background:linear-gradient(135deg,var(--dark) 0%,var(--primary) 100%);color:#fff}
+.contact-section h2{color:#fff}
+.contact-section .solution-intro{color:rgba(255,255,255,.7)}
+.contact-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;margin-top:48px}
+.form-group{margin-bottom:20px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.contact-section label{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px;color:#fff}
+input,textarea{width:100%;padding:14px 18px;border:2px solid rgba(255,255,255,.15);border-radius:10px;font-family:"DM Sans",sans-serif;font-size:1rem;transition:border .3s;background:rgba(255,255,255,.08);color:#fff}
+input:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(46,125,196,.2)}
+input::placeholder,textarea::placeholder{color:rgba(255,255,255,.4)}
+textarea{min-height:120px;resize:vertical}
+.checkbox-group{display:flex;gap:10px;align-items:flex-start;margin-bottom:24px}
+.checkbox-group input{width:auto;margin-top:4px}
+.checkbox-group label{font-weight:400;font-size:.88rem;color:rgba(255,255,255,.7)}
+.trust-box{background:rgba(255,255,255,.06);backdrop-filter:blur(8px);padding:36px;border-radius:16px;border:1px solid rgba(255,255,255,.1);height:fit-content}
+.trust-item{display:flex;gap:14px;align-items:center;margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.1)}
+.trust-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.trust-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;flex-shrink:0}
+.trust-item p{font-size:.95rem;color:#fff;font-weight:500}
+.success-msg{display:none;background:rgba(255,255,255,.15);color:#fff;padding:20px;border-radius:10px;text-align:center;font-weight:600;margin-top:16px}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,.7);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-grid h4{color:#fff;margin-bottom:16px;font-family:"Playfair Display",serif}
+.footer-grid a{color:rgba(255,255,255,.45);display:block;margin-bottom:10px;font-size:.95rem;transition:color .3s}
+.footer-grid a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;text-align:center;font-size:.85rem;color:rgba(255,255,255,.3);letter-spacing:.3px}
+
+/* MODALS */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;align-items:center;justify-content:center}
+.modal-overlay.active{display:flex}
+.modal{background:var(--white);max-width:700px;width:90%;max-height:80vh;overflow-y:auto;border-radius:16px;padding:48px;position:relative}
+.modal-close{position:absolute;top:16px;right:20px;font-size:1.5rem;cursor:pointer;background:none;border:none;color:var(--muted)}
+.modal h2{font-size:1.6rem;margin-bottom:24px}
+.modal p,.modal li{font-size:.95rem;line-height:1.7;color:var(--muted);margin-bottom:12px}
+.modal h3{font-size:1.15rem;margin:20px 0 10px;color:var(--primary)}
+
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-scale{opacity:0;transform:scale(.96);transition:opacity 1s ease,transform 1s ease}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+h1{font-size:2.3rem}
+h2{font-size:1.7rem}
+.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(15,25,35,.97);flex-direction:column;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.3);border-radius:0 0 12px 12px;backdrop-filter:blur(12px)}
+.nav-links.open{display:flex}
+.hamburger{display:flex}
+.hero{min-height:auto;padding:140px 0 100px}
+.timeline{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}
+.timeline::before{display:none}
+.benefits-grid{grid-template-columns:1fr}
+.invest-pillars{grid-template-columns:1fr}
+.contact-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr}
+.email-cards{grid-template-columns:1fr}
+.form-row{grid-template-columns:1fr}
+.invest-statement{font-size:1.3rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="mainNav">
+<div class="container">
+<a href="#" class="nav-logo">CleanLeads</a>
+<div class="nav-links" id="navLinks">
+<a href="#problem">Realität</a>
+<a href="#loesung">System</a>
+<a href="#prozess">Ablauf</a>
+<a href="#vorteile">Ergebnis</a>
+<a href="#investition">Preis</a>
+<a href="#kontakt" class="nav-cta">Gespräch sichern</a>
+</div>
+<button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+<div class="container">
+<div class="hero-content reveal">
+<span class="badge">B2B-Leadgenerierung für Reinigungsunternehmen</span>
+<h1>Ihre Pipeline ist leer.<br>Wir füllen sie.</h1>
+<p>Systematische Neukundengewinnung, vollständig automatisiert. Qualifizierte Anfragen auf Ihrem Tisch – ohne Kaltakquise, ohne Zeitverlust, ohne Abhängigkeit von Empfehlungen.</p>
+<div class="hero-btns">
+<a href="#kontakt" class="btn-primary">Erstgespräch vereinbaren &rarr;</a>
+<a href="#prozess" class="btn-outline">Ablauf ansehen</a>
+</div>
+<div class="trust-bar">
+<span>DSGVO-konform</span>
+<span>Reiner B2B-Fokus</span>
+<span>Keine Kaltakquise Ihrerseits</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem" style="background:#EDF1F7">
+<div class="container">
+<h2 class="reveal">Die unbequeme Wahrheit über Ihr Wachstum.</h2>
+<div class="cards">
+<div class="card reveal">
+<div class="card-num">01</div>
+<h3>Keine Zeit für Akquise</h3>
+<p>Mitarbeiter koordinieren. Qualität sichern. Kunden betreuen. Für Neukundengewinnung bleibt nichts. Das Ergebnis: Stillstand, getarnt als Tagesgeschäft.</p>
+</div>
+<div class="card reveal">
+<div class="card-num">02</div>
+<h3>Empfehlungen sind keine Strategie</h3>
+<p>Empfehlungen kommen – oder nicht. Sie haben keine Kontrolle, keinen Hebel, keine Planbarkeit. Wer sein Wachstum dem Zufall überlässt, wächst nicht.</p>
+</div>
+<div class="card reveal">
+<div class="card-num">03</div>
+<h3>Unsichtbar für Ihre Zielkunden</h3>
+<p>Büros, Praxen, Kanzleien – sie alle brauchen Reinigung. Aber sie kennen Sie nicht. Ohne professionellen Erstkontakt bleiben Sie unter dem Radar.</p>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<!-- LÖSUNG -->
+<section id="loesung">
+<div class="container">
+<h2 class="reveal">Das System hinter planbarem Wachstum.</h2>
+<p class="solution-intro reveal">Wir übernehmen Ihre B2B-Akquise vollständig – von der Recherche bis zur Übergabe qualifizierter Kontakte. Kein Agentur-Theater. Messbare Ergebnisse.</p>
+<div class="feature reveal"><div class="feature-line"></div><div><h3>Zielgenaue Leadidentifikation</h3><p>Systematische Recherche relevanter Unternehmen in Ihrem Einzugsgebiet. Bürogebäude, Praxen, Kanzleien, Gewerbe. Jeder Lead manuell geprüft und qualifiziert.</p></div></div>
+<div class="feature reveal"><div class="feature-line"></div><div><h3>Verifizierte Kontaktdaten</h3><p>Unternehmensname, Branche, Ansprechpartner, E-Mail, Standort. Geprüft, vollständig, aktuell. Keine toten Adressen.</p></div></div>
+<div class="feature reveal"><div class="feature-line"></div><div><h3>Kommunikation, die ankommt</h3><p>Individuell für Ihr Unternehmen geschrieben. Professionell, klar, auf Augenhöhe – E-Mails, die gelesen und beantwortet werden.</p></div></div>
+<div class="feature reveal"><div class="feature-line"></div><div><h3>Automatisierter Versand mit Präzision</h3><p>Tägliche Kontingente, technisch optimiert für maximale Zustellbarkeit. Kontrolliert, rechtskonform, wirkungsvoll.</p></div></div>
+</div>
+</section>
+
+<!-- PROZESS -->
+<section id="prozess" style="background:#EDF1F7">
+<div class="container">
+<h2 class="reveal">Von der Analyse zur Anfrage. In fünf Schritten.</h2>
+<div class="timeline reveal">
+<div class="step"><div class="step-num">I</div><h3>Strategie</h3><p>Region, Zielgruppe, Positionierung. Wir definieren die Kampagne.</p></div>
+<div class="step"><div class="step-num">II</div><h3>Recherche</h3><p>Manuelle Identifikation und Validierung jedes einzelnen Kontakts.</p></div>
+<div class="step"><div class="step-num">III</div><h3>Texterstellung</h3><p>Maßgeschneiderte E-Mail-Sequenzen. Ihre Freigabe vor dem Start.</p></div>
+<div class="step"><div class="step-num">IV</div><h3>Versand</h3><p>DSGVO-konform, technisch optimiert, kontrolliert.</p></div>
+<div class="step"><div class="step-num">V</div><h3>Übergabe</h3><p>Interessierte Kontakte direkt an Sie. Ohne Umwege.</p></div>
+</div>
+</div>
+</section>
+
+
+
+<!-- VORTEILE -->
+<section id="vorteile" class="benefits">
+
+<div class="container">
+<h2 class="reveal">Das Ergebnis: Kontrolle statt Hoffnung.</h2>
+<div class="benefits-grid">
+<div class="benefit-card reveal"><h3>Planbare Pipeline</h3><p>Sie wissen am Monatsanfang, wie viele Anfragen kommen. Wachstum wird kalkulierbar – nicht zufällig.</p></div>
+<div class="benefit-card reveal"><h3>Null Zeitverlust</h3><p>Recherche, Texterstellung, Versand – läuft vollständig ohne Sie. Ihre Zeit bleibt dort, wo sie Wert erzeugt.</p></div>
+<div class="benefit-card reveal"><h3>Skalierung nach Bedarf</h3><p>500 Kontakte oder 5000. Sie bestimmen das Volumen. Wir passen die Kampagne an.</p></div>
+<div class="benefit-card reveal"><h3>Fokus auf Ihr Kerngeschäft</h3><p>Ihr Team macht, was es exzellent kann. Wir übernehmen den Erstkontakt.</p></div>
+</div>
+</div>
+</section>
+
+<!-- RECHTLICHER HINWEIS -->
+<section style="background:#EDF1F7">
+<div class="container">
+<div class="legal-note reveal">
+<h3>Rechtliche Grundlage</h3>
+<p>Ausschließlich B2B. Zulässig gemäß § 7 Abs. 2 Nr. 3 UWG bei sachlichem Geschäftsbezug – den wir bei jeder Kampagne sicherstellen. DSGVO-konform. Klare Opt-out-Option in jeder Nachricht. Widersprüche werden unmittelbar umgesetzt.</p>
+<p>Keine Massenkommunikation. Relevante, personalisierte Geschäftsanbahnung mit konkretem Mehrwert für den Empfänger.</p>
+</div>
+</div>
+</section>
+
+<!-- BEISPIEL-EMAILS -->
+<section class="email-section" style="background:var(--surface)">
+<div class="container">
+<h2 class="reveal">So klingen Nachrichten, die Antworten erzeugen.</h2>
+<p class="solution-intro reveal">Keine Phrasen. Keine Verkäufersprache. Präzise, respektvoll, auf den Punkt.</p>
+<div class="email-cards">
+<div class="email-card reveal">
+<div class="email-header"><span><strong>Betreff:</strong> Reinigung für Ihre Praxis – kurze Frage</span><span><strong>Von:</strong> Max Mustermann &lt;m.mustermann@reinigung.de&gt;</span></div>
+<div class="email-body"><p>Sehr geehrte Damen und Herren,</p><p>mein Name ist Max Mustermann von Mustermann Reinigungsservice, Berlin. Wir reinigen Arzt- und Zahnarztpraxen in Ihrer Region.</p><p>Kurze Frage: Sind Sie mit Ihrem aktuellen Reinigungsdienstleister zufrieden – oder wäre ein Vergleichsangebot interessant?</p><p>Kein Druck, kein Verkaufsgespräch. Nur ein ehrliches Angebot.</p><p>Mit freundlichen Grüßen,<br>Max Mustermann | +49 30 1234567</p><p><em>P.S. Kein Interesse? Kurze Antwort genügt – ich melde mich nicht wieder.</em></p></div>
+</div>
+<div class="email-card reveal">
+<div class="email-header"><span><strong>Betreff:</strong> Kurze Nachfrage – Reinigung</span><span><strong>Von:</strong> Max Mustermann &lt;m.mustermann@reinigung.de&gt;</span></div>
+<div class="email-body"><p>Sehr geehrte Damen und Herren,</p><p>vor einigen Tagen hatte ich Ihnen geschrieben. Möglicherweise ist die Nachricht untergegangen.</p><p>Falls kein Interesse besteht: selbstverständlich. Falls doch – ich stehe für ein kurzes Gespräch bereit.</p><p>Mit freundlichen Grüßen,<br>Max Mustermann | Mustermann Reinigungsservice</p></div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<!-- INVESTITION -->
+<section id="investition" class="invest-section">
+
+<div class="container">
+<div class="invest-content">
+<h2 class="reveal">Preisstruktur</h2>
+<div class="invest-divider"></div>
+<p class="invest-statement reveal">Jedes Projekt wird individuell kalkuliert –<br>auf Basis Ihres Potenzials, nicht nach Stundensätzen.</p>
+<div class="invest-divider"></div>
+<div class="invest-pillars reveal">
+<div class="invest-pillar"><div class="pillar-num">01</div><h3>Individuelle Analyse</h3><p>Wir verstehen Ihre Ausgangslage, bevor wir über Konditionen sprechen.</p></div>
+<div class="invest-pillar"><div class="pillar-num">02</div><h3>Maßgeschneiderte Strategie</h3><p>Kein Paket von der Stange. Ihre Lösung wird exklusiv für Ihr Unternehmen entwickelt.</p></div>
+<div class="invest-pillar"><div class="pillar-num">03</div><h3>Persönliches Gespräch</h3><p>Konditionen besprechen wir direkt. Kostenlos. Unverbindlich. Auf Augenhöhe.</p></div>
+</div>
+<a href="#kontakt" class="btn-primary reveal">Erstgespräch vereinbaren &rarr;</a>
+</div>
+</div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt" class="contact-section">
+<div class="container">
+<h2 class="reveal">Sprechen wir über Ihre Neukundengewinnung.</h2>
+<p class="solution-intro reveal">15 Minuten. Keine Verpflichtung. Danach wissen Sie, ob unser System zu Ihrem Unternehmen passt.</p>
+<div class="contact-grid reveal">
+<form id="contactForm">
+<div class="form-row">
+<div class="form-group"><label for="fname">Vorname *</label><input type="text" id="fname" required></div>
+<div class="form-group"><label for="lname">Nachname *</label><input type="text" id="lname" required></div>
+</div>
+<div class="form-group"><label for="company">Unternehmen *</label><input type="text" id="company" required></div>
+<div class="form-group"><label for="email">E-Mail *</label><input type="email" id="email" required></div>
+<div class="form-group"><label for="phone">Telefon (optional)</label><input type="tel" id="phone"></div>
+<div class="form-group"><label for="message">Ihre größte Herausforderung aktuell</label><textarea id="message"></textarea></div>
+<div class="checkbox-group"><input type="checkbox" id="privacy" required><label for="privacy">Ich habe die <a href="#" id="openDatenschutz" style="color:var(--accent);text-decoration:underline">Datenschutzerklärung</a> gelesen und stimme zu.</label></div>
+<button type="submit" class="btn-primary" style="width:100%;font-size:1.05rem">Gespräch anfragen &rarr;</button>
+<div class="success-msg" id="successMsg">Anfrage erhalten. Wir melden uns innerhalb von 24 Stunden.</div>
+</form>
+<div class="trust-box">
+<div class="trust-item"><div class="trust-dot"></div><p>Rückmeldung innerhalb von 24 Stunden</p></div>
+<div class="trust-item"><div class="trust-dot"></div><p>Ihre Daten werden nicht weitergegeben</p></div>
+<div class="trust-item"><div class="trust-dot"></div><p>Kein Verkaufsdruck – nur Substanz</p></div>
+<div class="trust-item"><div class="trust-dot"></div><p>Kostenlos und unverbindlich</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>CleanLeads</h4><p style="color:rgba(255,255,255,.45);font-size:.95rem;line-height:1.7">Systematische B2B-Neukundengewinnung für Reinigungsunternehmen im DACH-Raum.</p></div>
+<div><h4>Rechtliches</h4><a href="#" id="openImpressum">Impressum</a><a href="#" id="openDatenschutz2">Datenschutz</a><a href="#kontakt">Kontakt</a><a href="#">AGB</a></div>
+<div><h4>Erreichbarkeit</h4><p style="color:rgba(255,255,255,.45);font-size:.95rem;margin-bottom:8px">info@cleanleads.de</p><p style="color:rgba(255,255,255,.45);font-size:.95rem;margin-bottom:8px">+49 (0) 123 456789</p><p style="color:rgba(255,255,255,.45);font-size:.95rem">Deutschland</p></div>
+</div>
+<div class="footer-bottom">&copy; 2025 CleanLeads. Alle Rechte vorbehalten.</div>
+</div>
+</footer>
+
+<!-- IMPRESSUM MODAL -->
+<div class="modal-overlay" id="impressumModal">
+<div class="modal">
+<button class="modal-close" id="closeImpressum">&times;</button>
+<h2>Impressum</h2>
+<h3>Angaben gemäß § 5 TMG</h3>
+<p>[Unternehmensname]<br>[Straße, Hausnummer]<br>[PLZ, Ort]</p>
+<p><strong>Vertreten durch:</strong> [Name des Geschäftsführers]<br><strong>Telefon:</strong> [Telefonnummer]<br><strong>E-Mail:</strong> [E-Mail-Adresse]</p>
+<p><strong>Registergericht:</strong> [Amtsgericht]<br><strong>Registernummer:</strong> [HRB-Nummer]<br><strong>USt-IdNr.:</strong> [Umsatzsteuer-ID]</p>
+<p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>[Name], [Adresse]</p>
+</div>
+</div>
+
+<!-- DATENSCHUTZ MODAL -->
+<div class="modal-overlay" id="datenschutzModal">
+<div class="modal">
+<button class="modal-close" id="closeDatenschutz">&times;</button>
+<h2>Datenschutzerklärung</h2>
+<h3>1. Verantwortlicher</h3>
+<p>Verantwortlich für die Datenverarbeitung: [Unternehmensname], [Adresse], [E-Mail], [Telefon].</p>
+<h3>2. Erhebung und Verarbeitung</h3>
+<p><strong>Kontaktformular:</strong> Eingegebene Daten werden zur Bearbeitung Ihrer Anfrage verarbeitet. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
+<p><strong>E-Mail-Kommunikation:</strong> Speicherung für die Dauer der Geschäftsbeziehung. Löschung nach Zweckwegfall.</p>
+<h3>3. Cookies und Tracking</h3>
+<p>Diese Website verwendet keine Tracking-Cookies ohne Ihre Einwilligung.</p>
+<h3>4. Ihre Rechte</h3>
+<p>Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Datenübertragbarkeit gemäß Art. 15–21 DSGVO.</p>
+<h3>5. Beschwerderecht</h3>
+<p>Beschwerde bei der zuständigen Datenschutz-Aufsichtsbehörde.</p>
+<h3>6. B2B-E-Mail-Kommunikation</h3>
+<p>Versand an gewerbliche Empfänger mit Opt-out-Möglichkeit. Widersprüche werden unmittelbar umgesetzt.</p>
+<h3>7. Datenschutzbeauftragter</h3>
+<p>Kontakt: [E-Mail-Adresse].</p>
+</div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+// Nav scroll effect
+var nav=document.getElementById("mainNav");
+window.addEventListener("scroll",function(){
+nav.classList.toggle("scrolled",window.scrollY>60);
+});
+
+// Hamburger
+document.getElementById("hamburger").addEventListener("click",function(){
+document.getElementById("navLinks").classList.toggle("open");
+});
+document.querySelectorAll(".nav-links a").forEach(function(a){
+a.addEventListener("click",function(){document.getElementById("navLinks").classList.remove("open")});
+});
+
+// Reveal animations
+var observer=new IntersectionObserver(function(entries){
+entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target)}});
+},{threshold:0.1});
+document.querySelectorAll(".reveal,.reveal-scale").forEach(function(el){observer.observe(el)});
+
+// Form
+document.getElementById("contactForm").addEventListener("submit",function(e){
+e.preventDefault();
+var f=this,valid=true;
+f.querySelectorAll("[required]").forEach(function(inp){
+if(!inp.value.trim()&&inp.type!=="checkbox"){inp.style.borderColor="#e74c3c";valid=false}
+else if(inp.type==="checkbox"&&!inp.checked){inp.parentElement.style.color="#e74c3c";valid=false}
+else{inp.style.borderColor="#e0e5ec"}
+});
+if(valid){document.getElementById("successMsg").style.display="block";f.reset();setTimeout(function(){document.getElementById("successMsg").style.display="none"},5000)}
+});
+
+// Modals
+function openModal(id){document.getElementById(id).classList.add("active")}
+function closeModal(id){document.getElementById(id).classList.remove("active")}
+document.getElementById("openImpressum").addEventListener("click",function(e){e.preventDefault();openModal("impressumModal")});
+document.getElementById("openDatenschutz").addEventListener("click",function(e){e.preventDefault();openModal("datenschutzModal")});
+document.getElementById("openDatenschutz2").addEventListener("click",function(e){e.preventDefault();openModal("datenschutzModal")});
+document.getElementById("closeImpressum").addEventListener("click",function(){closeModal("impressumModal")});
+document.getElementById("closeDatenschutz").addEventListener("click",function(){closeModal("datenschutzModal")});
+document.querySelectorAll(".modal-overlay").forEach(function(m){
+m.addEventListener("click",function(e){if(e.target===m)m.classList.remove("active")});
+});
+</script>
+</body>
+</html>
