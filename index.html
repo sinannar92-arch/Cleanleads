@@ -348,7 +348,7 @@ h2{font-size:1.7rem}
 <div class="form-group"><label for="email">E-Mail *</label><input type="email" id="email" required></div>
 <div class="form-group"><label for="phone">Telefon (optional)</label><input type="tel" id="phone"></div>
 <div class="form-group"><label for="message">Ihre größte Herausforderung aktuell</label><textarea id="message"></textarea></div>
-<div class="checkbox-group"><input type="checkbox" id="privacy" required><label for="privacy">Ich habe die <a href="#" id="openDatenschutz" style="color:var(--accent);text-decoration:underline">Datenschutzerklärung</a> gelesen und stimme zu.</label></div>
+<div class="checkbox-group"><input type="checkbox" id="privacy" required><label for="privacy">Ich habe die <a href="datenschutz.html" target="_blank" style="color:var(--accent);text-decoration:underline">Datenschutzerklärung</a> gelesen und stimme zu.</label></div>
 <button type="submit" class="btn-primary" style="width:100%;font-size:1.05rem">Gespräch anfragen &rarr;</button>
 <div class="success-msg" id="successMsg">Anfrage erhalten. Wir melden uns innerhalb von 24 Stunden.</div>
 </form>
@@ -367,96 +367,12 @@ h2{font-size:1.7rem}
 <div class="container">
 <div class="footer-grid">
 <div><h4>CleanLeads</h4><p style="color:rgba(255,255,255,.45);font-size:.95rem;line-height:1.7">Systematische B2B-Neukundengewinnung für Reinigungsunternehmen im DACH-Raum.</p></div>
-<div><h4>Rechtliches</h4><a href="#" id="openImpressum">Impressum</a><a href="#" id="openDatenschutz2">Datenschutz</a><a href="#kontakt">Kontakt</a><a href="#">AGB</a></div>
+<div><h4>Rechtliches</h4><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="#kontakt">Kontakt</a><a href="#">AGB</a></div>
 <div><h4>Erreichbarkeit</h4><p style="color:rgba(255,255,255,.45);font-size:.95rem;margin-bottom:8px">info@cleanleads.de</p><p style="color:rgba(255,255,255,.45);font-size:.95rem;margin-bottom:8px">+49 (0) 123 456789</p><p style="color:rgba(255,255,255,.45);font-size:.95rem">Deutschland</p></div>
 </div>
 <div class="footer-bottom">&copy; 2025 CleanLeads. Alle Rechte vorbehalten.</div>
 </div>
 </footer>
-
-<!-- IMPRESSUM MODAL -->
-<div class="modal-overlay" id="impressumModal">
-<div class="modal">
-<button class="modal-close" id="closeImpressum">&times;</button>
-<h2>Impressum</h2>
-<h3>Angaben gemäß § 5 TMG</h3>
-<p>Soner Nar Einzelunternehmen<br>Methfesselstr. 50<br>10965 Berlin</p>
-
-<h3>Kontakt</h3>
-<p>E-Mail: info@cleanleads-agentur.de<br>Webseite: www.cleanleads-agentur.de</p>
-
-<h3>Umsatzsteuer-Identifikationsnummer</h3>
-<p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>(In Beantragung)</p>
-
-<h3>EU-Streitschlichtung</h3>
-<p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">https://ec.europa.eu/consumers/odr/</a>.<br>Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
-
-<h3>Verbraucherstreitbeilegung/Universalschlichtungsstelle</h3>
-<p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
-
-<h3>Haftung für Inhalte</h3>
-<p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
-<p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
-
-<h3>Haftung für Links</h3>
-<p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p>
-
-<h3>Urheberrecht</h3>
-<p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
-</div>
-</div>
-
-<!-- DATENSCHUTZ MODAL -->
-<div class="modal-overlay" id="datenschutzModal">
-<div class="modal">
-<button class="modal-close" id="closeDatenschutz">&times;</button>
-<h2>Datenschutzerklärung</h2>
-
-<h3>1. Datenschutz auf einen Blick</h3>
-<p><strong>Allgemeine Hinweise</strong><br>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.</p>
-
-<p><strong>Datenerfassung auf dieser Website</strong><br><em>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</em><br>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen.</p>
-
-<p><em>Wie erfassen wir Ihre Daten?</em><br>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.</p>
-<p>Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Zeitpunkt des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.</p>
-
-<p><em>Wofür nutzen wir Ihre Daten?</em><br>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.</p>
-
-<h3>2. Hosting und Content Delivery Networks (CDN)</h3>
-<p>Wir hosten unsere Website bei Vercel und nutzen die Domain-Services von IONOS.</p>
-
-<p><strong>Vercel</strong><br>Anbieter ist die Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA. Vercel stellt die Infrastruktur bereit, auf der unsere Webseite betrieben wird. Bei der Nutzung unserer Webseite werden personenbezogene Daten (wie z. B. Ihre IP-Adresse und technische Metadaten) auf den Servern von Vercel verarbeitet, um die Auslieferung der Seite zu ermöglichen und die Sicherheit zu gewährleisten. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO zur Gewährleistung der Sicherheit und Stabilität der Webseite sowie auf Grundlage eines Vertrags zur Auftragsverarbeitung (AVV).</p>
-
-<p><strong>IONOS</strong><br>Unsere Domain wird über die IONOS SE, Elgendorfer Str. 57, 56410 Montabaur bereitgestellt. IONOS erfasst bei jedem Aufruf der Seite technische Daten in Server-Logfiles, um die Stabilität und Sicherheit der Domain-Infrastruktur zu gewährleisten. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.</p>
-
-<h3>3. Allgemeine Hinweise und Pflichtinformationen</h3>
-<p><strong>Datenschutz</strong><br>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
-<p>Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Diese Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht.</p>
-<p>Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
-
-<p><strong>Hinweis zur verantwortlichen Stelle</strong><br>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
-<p>Soner Nar Einzelunternehmen<br>Methfesselstr. 50<br>10965 Berlin</p>
-<p>E-Mail: info@cleanleads-agentur.de</p>
-
-<p><strong>Widerruf Ihrer Einwilligung zur Datenverarbeitung</strong><br>Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.</p>
-
-<p><strong>Beschwerderecht bei der zuständigen Aufsichtsbehörde</strong><br>Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes zu.</p>
-
-<h3>4. Datenerfassung auf dieser Website</h3>
-<p><strong>Kontaktformular</strong><br>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten (Name, Unternehmen, E-Mail-Adresse) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
-<p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO).</p>
-
-<h3>5. Ihre Rechte</h3>
-<p>Sie haben das Recht:</p>
-<ul>
-<li>Auskunft über Ihre bei uns gespeicherten persönlichen Daten zu verlangen (Art. 15 DSGVO).</li>
-<li>Die Berichtigung unrichtiger oder Vervollständigung Ihrer bei uns gespeicherten persönlichen Daten zu verlangen (Art. 16 DSGVO).</li>
-<li>Die Löschung Ihrer bei uns gespeicherten persönlichen Daten zu verlangen (Art. 17 DSGVO).</li>
-<li>Die Einschränkung der Verarbeitung Ihrer persönlichen Daten zu verlangen (Art. 18 DSGVO).</li>
-<li>Widerspruch gegen die Verarbeitung Ihrer Daten einzulegen (Art. 21 DSGVO).</li>
-</ul>
-</div>
-</div>
 
 <!-- JAVASCRIPT -->
 <script>
@@ -490,18 +406,6 @@ else if(inp.type==="checkbox"&&!inp.checked){inp.parentElement.style.color="#e74
 else{inp.style.borderColor="#e0e5ec"}
 });
 if(valid){document.getElementById("successMsg").style.display="block";f.reset();setTimeout(function(){document.getElementById("successMsg").style.display="none"},5000)}
-});
-
-// Modals
-function openModal(id){document.getElementById(id).classList.add("active")}
-function closeModal(id){document.getElementById(id).classList.remove("active")}
-document.getElementById("openImpressum").addEventListener("click",function(e){e.preventDefault();openModal("impressumModal")});
-document.getElementById("openDatenschutz").addEventListener("click",function(e){e.preventDefault();openModal("datenschutzModal")});
-document.getElementById("openDatenschutz2").addEventListener("click",function(e){e.preventDefault();openModal("datenschutzModal")});
-document.getElementById("closeImpressum").addEventListener("click",function(){closeModal("impressumModal")});
-document.getElementById("closeDatenschutz").addEventListener("click",function(){closeModal("datenschutzModal")});
-document.querySelectorAll(".modal-overlay").forEach(function(m){
-m.addEventListener("click",function(e){if(e.target===m)m.classList.remove("active")});
 });
 </script>
 </body>
