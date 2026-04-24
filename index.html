@@ -158,21 +158,42 @@ footer{background:var(--dark);color:rgba(255,255,255,.7);padding:60px 0 30px}
 
 /* RESPONSIVE */
 @media(max-width:900px){
-h1{font-size:2.3rem}
-h2{font-size:1.7rem}
-.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(15,25,35,.97);flex-direction:column;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.3);border-radius:0 0 12px 12px;backdrop-filter:blur(12px)}
+h1{font-size:2.4rem}
+h2{font-size:1.8rem}
+.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(15,25,35,.98);flex-direction:column;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.3);border-radius:0 0 16px 16px;backdrop-filter:blur(16px)}
 .nav-links.open{display:flex}
 .hamburger{display:flex}
-.hero{min-height:auto;padding:140px 0 100px}
-.timeline{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}
+.hero{min-height:auto;padding:120px 0 80px}
+.timeline{grid-template-columns:1fr;max-width:500px;margin:40px auto 0;gap:36px}
 .timeline::before{display:none}
-.benefits-grid{grid-template-columns:1fr}
-.invest-pillars{grid-template-columns:1fr}
-.contact-grid{grid-template-columns:1fr}
-.footer-grid{grid-template-columns:1fr}
+.step::after{content:"";position:absolute;bottom:-22px;left:50%;width:2px;height:12px;background:var(--accent);transform:translateX(-50%);border-radius:2px}
+.step:last-child::after{display:none}
+.benefits-grid{grid-template-columns:1fr;gap:24px}
+.invest-pillars{grid-template-columns:1fr;gap:24px;margin:40px 0}
+.contact-grid{grid-template-columns:1fr;gap:40px}
+.footer-grid{grid-template-columns:1fr;gap:32px;text-align:center}
 .email-cards{grid-template-columns:1fr}
 .form-row{grid-template-columns:1fr}
-.invest-statement{font-size:1.3rem}
+.invest-statement{font-size:1.35rem;margin:32px 0}
+.cards{grid-template-columns:1fr;gap:24px}
+}
+
+@media(max-width:600px){
+h1{font-size:2.1rem;line-height:1.2}
+h2{font-size:1.6rem}
+.hero p{font-size:1.05rem;margin-bottom:32px;line-height:1.6}
+.hero-btns{flex-direction:column;gap:14px;margin-bottom:40px}
+.hero-btns a{width:100%;text-align:center;padding:14px 20px}
+.trust-bar{flex-direction:column;gap:14px;align-items:flex-start}
+.legal-note{padding:28px 24px;border-radius:12px;border-left:none;border-top:3px solid var(--accent)}
+.benefit-card, .card, .invest-pillar{padding:28px 24px}
+section{padding:70px 0}
+.invest-statement{font-size:1.25rem;line-height:1.4}
+.trust-box{padding:28px 24px}
+.solution-intro{font-size:1.05rem;margin-bottom:32px}
+.nav-logo{font-size:1.35rem}
+.badge{font-size:0.75rem;padding:6px 16px;margin-bottom:20px}
+.trust-item{margin-bottom:16px;padding-bottom:16px}
 }
 </style>
 </head>
