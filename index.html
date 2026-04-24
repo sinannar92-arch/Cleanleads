@@ -340,15 +340,15 @@ h2{font-size:1.7rem}
 <h2 class="reveal">Sprechen wir über Ihre Neukundengewinnung.</h2>
 <p class="solution-intro reveal">15 Minuten. Keine Verpflichtung. Danach wissen Sie, ob unser System zu Ihrem Unternehmen passt.</p>
 <div class="contact-grid reveal">
-<form id="contactForm">
+<form id="contactForm" action="https://formsubmit.co/info@cleanleads-agentur.de" method="POST">
 <div class="form-row">
-<div class="form-group"><label for="fname">Vorname *</label><input type="text" id="fname" required></div>
-<div class="form-group"><label for="lname">Nachname *</label><input type="text" id="lname" required></div>
+<div class="form-group"><label for="fname">Vorname *</label><input type="text" id="fname" name="Vorname" required></div>
+<div class="form-group"><label for="lname">Nachname *</label><input type="text" id="lname" name="Nachname" required></div>
 </div>
-<div class="form-group"><label for="company">Unternehmen *</label><input type="text" id="company" required></div>
-<div class="form-group"><label for="email">E-Mail *</label><input type="email" id="email" required></div>
-<div class="form-group"><label for="phone">Telefon (optional)</label><input type="tel" id="phone"></div>
-<div class="form-group"><label for="message">Ihre größte Herausforderung aktuell</label><textarea id="message"></textarea></div>
+<div class="form-group"><label for="company">Unternehmen *</label><input type="text" id="company" name="Unternehmen" required></div>
+<div class="form-group"><label for="email">E-Mail *</label><input type="email" id="email" name="Email" required></div>
+<div class="form-group"><label for="phone">Telefon (optional)</label><input type="tel" id="phone" name="Telefon"></div>
+<div class="form-group"><label for="message">Ihre größte Herausforderung aktuell</label><textarea id="message" name="Nachricht"></textarea></div>
 <div class="checkbox-group"><input type="checkbox" id="privacy" required><label for="privacy">Ich habe die <a href="datenschutz.html" target="_blank" style="color:var(--accent);text-decoration:underline">Datenschutzerklärung</a> gelesen und stimme zu.</label></div>
 <button type="submit" class="btn-primary" style="width:100%;font-size:1.05rem">Gespräch anfragen &rarr;</button>
 <div class="success-msg" id="successMsg">Anfrage erhalten. Wir melden uns innerhalb von 24 Stunden.</div>
@@ -406,7 +406,29 @@ if(!inp.value.trim()&&inp.type!=="checkbox"){inp.style.borderColor="#e74c3c";val
 else if(inp.type==="checkbox"&&!inp.checked){inp.parentElement.style.color="#e74c3c";valid=false}
 else{inp.style.borderColor="#e0e5ec"}
 });
-if(valid){document.getElementById("successMsg").style.display="block";f.reset();setTimeout(function(){document.getElementById("successMsg").style.display="none"},5000)}
+if(valid){
+var btn = f.querySelector("button[type='submit']");
+var oldText = btn.innerHTML;
+btn.innerHTML = "Wird gesendet...";
+btn.disabled = true;
+
+fetch("https://formsubmit.co/ajax/info@cleanleads-agentur.de", {
+method: "POST",
+body: new FormData(f)
+}).then(function(response){return response.json()})
+.then(function(data){
+document.getElementById("successMsg").style.display="block";
+f.reset();
+btn.innerHTML = oldText;
+btn.disabled = false;
+setTimeout(function(){document.getElementById("successMsg").style.display="none"},5000);
+})
+.catch(function(error){
+alert("Fehler beim Senden. Bitte versuchen Sie es später noch einmal.");
+btn.innerHTML = oldText;
+btn.disabled = false;
+});
+}
 });
 </script>
 </body>
