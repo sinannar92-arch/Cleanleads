@@ -340,9 +340,7 @@ h2{font-size:1.7rem}
 <h2 class="reveal">Sprechen wir über Ihre Neukundengewinnung.</h2>
 <p class="solution-intro reveal">15 Minuten. Keine Verpflichtung. Danach wissen Sie, ob unser System zu Ihrem Unternehmen passt.</p>
 <div class="contact-grid reveal">
-<form id="contactForm" action="https://formsubmit.co/info@cleanleads-agentur.de" method="POST">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_next" value="https://sinannar92-arch.github.io/Cleanleads/">
+<form id="contactForm" action="https://formspree.io/f/mlgazbvd" method="POST">
 <div class="form-row">
 <div class="form-group"><label for="fname">Vorname *</label><input type="text" id="fname" name="Vorname" required></div>
 <div class="form-group"><label for="lname">Nachname *</label><input type="text" id="lname" name="Nachname" required></div>
@@ -410,9 +408,31 @@ else{inp.style.borderColor="#e0e5ec"}
 });
 if(valid){
 var btn = f.querySelector("button[type='submit']");
+var oldText = btn.innerHTML;
 btn.innerHTML = "Wird gesendet...";
-// Formular nativ absenden
-f.submit();
+btn.disabled = true;
+
+fetch(f.action, {
+  method: "POST",
+  body: new FormData(f),
+  headers: { 'Accept': 'application/json' }
+}).then(function(response) {
+  if (response.ok) {
+    document.getElementById("successMsg").style.display="block";
+    f.reset();
+    btn.innerHTML = oldText;
+    btn.disabled = false;
+    setTimeout(function(){document.getElementById("successMsg").style.display="none"},5000);
+  } else {
+    alert("Da gab es ein Problem bei der Übermittlung. Bitte prüfen Sie Ihre Eingaben.");
+    btn.innerHTML = oldText;
+    btn.disabled = false;
+  }
+}).catch(function(error) {
+  alert("Oops! Da gab es ein Problem bei der Übermittlung.");
+  btn.innerHTML = oldText;
+  btn.disabled = false;
+});
 }
 });
 </script>
